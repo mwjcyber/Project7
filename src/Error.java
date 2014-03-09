@@ -1,10 +1,3 @@
-/**
- * This is the base class for any "problem"
- * that occurs in the gedcom file.  Every problem 
- * contains the line number where it occurred as
- * well as a message describing the problem.
- *
- */
 public abstract class Error {
 	public Error(int lineNum, String msg) 
 	{

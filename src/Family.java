@@ -1,11 +1,3 @@
-/*Family Data Structure Class
- * Each family contains an individual family ID number
- * information on marriage/divorce
- * Individuals designated as husband and wife
- * Individuals designated as children
- * The ID number will be the key to the hash table that contains family objects
- */
-
 import java.util.Vector;
 import java.util.GregorianCalendar;
 
