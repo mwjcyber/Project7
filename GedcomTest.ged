@@ -20,9 +20,9 @@
 1 FAMC @F1@
 1 BIRT
 2 DATE 01 FEB 2010
-0 @I3@ INDI
+0 @I4@ INDI
 1 NAME Daughter1
-1 SEX M
+1 SEX F
 1 FAMC @F1@
 1 BIRT
 2 DATE 01 FEB 2011
@@ -49,10 +49,10 @@
 
 0 NOTE Acceptance Test: displayData
 0 NOTE This test is done in code.
-0 NOTE All GEDCOM data stored in the Data Stucture should be displayed.
+0 NOTE All GEDCOM data stored in the Data Structure should be displayed.
 
 0 NOTE Acceptance Test: checkDatesChrono
-0 NOTE This test should trigger an alert that a person's death preceeds their birth.
+0 NOTE This test should trigger an alert that a person's death precedes their birth.
 0 @I10@ INDI
 1 NAME Chrono Test
 1 BIRT
@@ -66,6 +66,7 @@
 1 HUSB @I3@
 1 WIFE @I4@
 1 MARR
+2 DATE 01 FEB 2014
 
 0 NOTE Acceptance Test: checkGender
 0 NOTE This test should trigger an alert that a person's gender doesn't match their marital role.
