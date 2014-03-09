@@ -98,22 +98,27 @@ public class GedcomReader
 	
 	public ErrorList findErrors() 
 	{
-		ErrorList pl = new ErrorList();
+		ErrorList el = new ErrorList();
 		
 		for ( String s : indIndex.keySet() ) 
 		{
-			if ( ErrorFinder.checkDeathBeforeBirth( indIndex.get(s) )) 
+			if ( ErrorFinder.checkDeathBeforeBirth(indIndex.get(s) )) 
 			{
-				pl.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + "'s death occurs before birth."));
+				el.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + "'s death occurs before birth."));
+			}
+			
+			if ( ErrorFinder.checkGender(famIndex, indIndex.get(s)))
+			{
+				el.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + "'s gender and spouse role don't match."));
 			}
 				
-			if(ErrorFinder.checkIncest(famIndex, indIndex, indIndex.get(s)))
+			if( ErrorFinder.checkIncest(famIndex, indIndex, indIndex.get(s)))
 			{
-				pl.add(new ErrorMessage(indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + " married  a sibling."));
+				el.add(new ErrorMessage(indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + " married  a sibling."));
 			}			
 		}
 		
-		return pl;
+		return el;
 	}
 	
 	public String parseID(String entry)
