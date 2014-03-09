@@ -1,4 +1,8 @@
-public abstract class Error {
+public abstract class Error 
+{
+	private String message;
+	private int lineNumber;
+	
 	public Error(int lineNum, String msg) 
 	{
 		this.lineNumber = lineNum;
@@ -7,13 +11,14 @@ public abstract class Error {
 	
 	public abstract String toString();
 	
-	public int getLineNumber() {
+	public int getLineNumber() 
+	{
 		return lineNumber;
 	}
 	
-	public String getMessage() {
+	public String getMessage() 
+	{
 		return message;
 	}
-	private String message;
-	private int lineNumber;
+
 }

@@ -1,7 +1,8 @@
 import java.util.Vector;
 import java.util.GregorianCalendar;
 
-public class Family {
+public class Family 
+{
 	private Vector<String> children;
 	private String famID;
 	private String husband;
@@ -88,11 +89,14 @@ public class Family {
 		return famID;
 	}
 	
-	public int getLineNumber() {
+	public int getLineNumber() 
+	{
 		return lineNumber;
 	}
 	
-	public void setLineNumber(int lineNum) {
+	public void setLineNumber(int lineNum) 
+	{
 		this.lineNumber = lineNum;
 	}
+	
 }

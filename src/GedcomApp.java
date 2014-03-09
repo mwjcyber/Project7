@@ -1,9 +1,10 @@
 import java.io.File;
 
 
-public class GedcomApp {
-
-	public static void main(String args[]) {
+public class GedcomApp 
+{
+	public static void main(String args[]) 
+	{
 		if(args.length != 1)
 		{
 			System.out.println("Enter a GEDCOM filename argument");
@@ -20,15 +21,18 @@ public class GedcomApp {
 			{
 				GedcomReader parser = new GedcomReader();
 				parser.readGED(file);
-				ErrorList pl = parser.findProblems();
+				ErrorList pl = parser.findErrors();
 				
-				if ( pl.size() == 0 ) {
+				if ( pl.size() == 0 ) 
+				{
 					System.out.println("File parsed! No Errors Found.");
 				}
-				else{
+				else
+				{
 					System.out.println( pl.buildOutputString() );
 				}
 			}
 		}
 	}
+	
 }
