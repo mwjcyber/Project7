@@ -85,11 +85,11 @@ public class GedcomReader {
 		ErrorList pl = new ErrorList();
 		
 		for ( String s : personIndex.keySet() ) {
-			if ( ErrorFinder.deathBeforeBirth( personIndex.get(s) )) {
+			if ( ErrorFinder.checkDeathBeforeBirth( personIndex.get(s) )) {
 				pl.add( new ErrorMessage( personIndex.get(s).getLineNumber(), "Person " + personIndex.get(s).getId() + " has a birthdate that occurs later than their death date."));
 			}
 				
-			if(ErrorFinder.marriedToSibling(familyIndex, personIndex, personIndex.get(s)))
+			if(ErrorFinder.checkIncest(familyIndex, personIndex, personIndex.get(s)))
 			{
 				pl.add(new ErrorMessage(personIndex.get(s).getLineNumber(), "Person " + personIndex.get(s).getId() + " is married to a sibling."));
 			}			
