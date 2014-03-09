@@ -21,8 +21,6 @@ public class ErrorFinder
 	public static boolean checkGender(Hashtable<String, Family> family, Individual ind)
 	{
 		String indGender = ind.getGender();
-		ArrayList<String> spouses = new ArrayList<String>();
-		
 		Iterator<String> i = ind.getFamS().iterator();
 		while(i.hasNext())
 		{
@@ -31,7 +29,7 @@ public class ErrorFinder
 				String s = i.next();
 				if ( family.containsKey(s) )
 				{
-					spouses.add(family.get(s).getWife());
+					family.get(s).getWife();
 				}
 				return true;				
 			}
@@ -41,7 +39,7 @@ public class ErrorFinder
 				String s = i.next();
 				if ( family.containsKey(s) )
 				{
-					spouses.add(family.get(s).getHusb());
+					family.get(s).getHusb();
 				}
 				return true;
 			}
