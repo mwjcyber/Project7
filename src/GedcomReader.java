@@ -12,16 +12,16 @@ public class GedcomReader
 	private boolean deathDate = false;
 	private boolean marrDate = false;
 	private boolean divDate = false;
-	private Hashtable<String, Family> familyIndex;
-	private Hashtable<String, Individual> personIndex;
-	private Vector<String> listOfPeople;
+	private Hashtable<String, Family> famIndex;
+	private Hashtable<String, Individual> indIndex;
+	private Vector<String> listOfInds;
 	private Vector<String> listOfFams;
 	
 	public GedcomReader()
 	{
-		familyIndex = new Hashtable<String, Family>(50);
-		personIndex = new Hashtable<String, Individual>(200);
-		listOfPeople = new Vector<String>(200);
+		famIndex = new Hashtable<String, Family>(50);
+		indIndex = new Hashtable<String, Individual>(200);
+		listOfInds = new Vector<String>(200);
 		listOfFams = new Vector<String>(50);
 	}
 	
@@ -52,12 +52,12 @@ public class GedcomReader
 							{
 								if(parseInd == true)
 								{
-									personIndex.put(ind.getId(), ind);
+									indIndex.put(ind.getId(), ind);
 									parseInd = false;
 								}
 								else if(parseFam == true)
 								{
-									familyIndex.put(fam.getID(), fam);
+									famIndex.put(fam.getID(), fam);
 									parseFam = false;
 								}
 								if(line.indexOf("FAM") != -1)
@@ -74,7 +74,7 @@ public class GedcomReader
 									parseFam = false;
 									id = parseID(line);
 									ind = new Individual(id, lineNumber);
-									listOfPeople.add(id);
+									listOfInds.add(id);
 								}
 							}
 						}
@@ -100,16 +100,16 @@ public class GedcomReader
 	{
 		ErrorList pl = new ErrorList();
 		
-		for ( String s : personIndex.keySet() ) 
+		for ( String s : indIndex.keySet() ) 
 		{
-			if ( ErrorFinder.checkDeathBeforeBirth( personIndex.get(s) )) 
+			if ( ErrorFinder.checkDeathBeforeBirth( indIndex.get(s) )) 
 			{
-				pl.add( new ErrorMessage( personIndex.get(s).getLineNumber(), "Person " + personIndex.get(s).getId() + "'s death occurs before birth."));
+				pl.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + "'s death occurs before birth."));
 			}
 				
-			if(ErrorFinder.checkIncest(familyIndex, personIndex, personIndex.get(s)))
+			if(ErrorFinder.checkIncest(famIndex, indIndex, indIndex.get(s)))
 			{
-				pl.add(new ErrorMessage(personIndex.get(s).getLineNumber(), "Person " + personIndex.get(s).getId() + " married  a sibling."));
+				pl.add(new ErrorMessage(indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + " married  a sibling."));
 			}			
 		}
 		
