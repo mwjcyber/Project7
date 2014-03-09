@@ -62,9 +62,41 @@
 
 0 NOTE Acceptance Test: checkIncest
 0 NOTE This test should trigger an alert that a person is married to a sibling.
+0 @I5@ INDI
+1 NAME Father2
+1 SEX M
+1 FAMS @F1@
+1 BIRT
+2 DATE 01 FEB 1970
+0 @I6@ INDI
+1 NAME Mother2
+1 SEX F
+1 FAMS @F1@
+1 BIRT
+2 DATE 01 FEB 1971
+0 @I7@ INDI
+1 NAME Son2
+1 SEX M
+1 FAMC @F2@
+1 FAMS @F3@
+1 BIRT
+2 DATE 01 FEB 2010
+0 @I8@ INDI
+1 NAME Daughter2
+1 SEX F
+1 FAMC @F2@
+1 FAMS @F3@
+1 BIRT
+2 DATE 01 FEB 2011
 0 @F2@ FAM
-1 HUSB @I3@
-1 WIFE @I4@
+1 HUSB @I5@
+1 WIFE @I6@
+1 MARR
+1 CHIL @I7@
+1 CHIL @I8@
+0 @F3@ FAM
+1 HUSB @I7@
+1 WIFE @I8@
 1 MARR
 2 DATE 01 FEB 2014
 
