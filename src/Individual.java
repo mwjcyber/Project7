@@ -9,7 +9,7 @@ public class Individual
 {
 	private String id;
 	private String name;
-	private String sex;
+	public String gender;
 	private GregorianCalendar birthDate;
 	private ArrayList<GregorianCalendar> deathDates;
 	private HashSet<String> famS;
@@ -48,15 +48,16 @@ public class Individual
 		this.name = name;
 	}
 	
-	public String getSex()
+	public String getGender()
 	{
-		return this.sex;
+		return this.gender;
 	}
 	
-	public void setSex(String sex)
+	public void setGender(String gender)
 	{
-		this.sex = sex;
+		this.gender = gender;
 	}
+	
 	public GregorianCalendar getBirthDate()
 	{
 		return this.birthDate;
@@ -112,7 +113,7 @@ public class Individual
 		Iterator<String> i = getFamS().iterator();
 		while(i.hasNext())
 		{
-			if(sex.equals("F"))
+			if(gender.equals("F"))
 			{
 				String s = i.next();
 				if ( family.containsKey(s) )
@@ -121,7 +122,7 @@ public class Individual
 				}
 			}
 				
-			else if(sex.equals("M"))
+			else if(gender.equals("M"))
 			{
 				String s = i.next();
 				if ( family.containsKey(s) )

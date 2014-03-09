@@ -6,25 +6,25 @@ public class Family {
 	private String famID;
 	private String husband;
 	private String wife;
-	private GregorianCalendar married;
 	private GregorianCalendar divorced;
+	private GregorianCalendar married;
 	private int lineNumber;
 	
 	public Family(String id)
 	{
-		famID = id;
 		children = new Vector<String>();
-		married = null;
+		famID = id;
 		divorced = null;
+		married = null;
 		setLineNumber(0);
 	}
 	
 	public Family(String id, int LineNum)
 	{
-		famID = id;
 		children = new Vector<String>();
-		married = null;
+		famID = id;
 		divorced = null;
+		married = null;
 		setLineNumber(LineNum);
 	}
 	

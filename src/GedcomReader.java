@@ -127,7 +127,7 @@ public class GedcomReader {
 				name = name + tokens[i];
 			cur.setName(name);
 		}else if(tag.equalsIgnoreCase("SEX")){
-			cur.setSex(tokens[2]);
+			cur.setGender(tokens[2]);
 		}else if(tag.equalsIgnoreCase("BIRT")){
 			birthD = true;
 		}else if(tag.equalsIgnoreCase("DEAT")){
