@@ -48,16 +48,6 @@ public class Individual
 		this.name = name;
 	}
 	
-	public String getGender()
-	{
-		return this.gender;
-	}
-	
-	public void setGender(String gender)
-	{
-		this.gender = gender;
-	}
-	
 	public GregorianCalendar getBirthDate()
 	{
 		return this.birthDate;
@@ -76,6 +66,16 @@ public class Individual
 	public void addDeathDate(GregorianCalendar deathDate)
 	{
 		this.deathDates.add(deathDate);
+	}
+	
+	public String getGender()
+	{
+		return this.gender;
+	}
+	
+	public void setGender(String gender)
+	{
+		this.gender = gender;
 	}
 	
 	public HashSet<String> getFamS()
@@ -108,8 +108,7 @@ public class Individual
 	
 	public ArrayList<String> getAllSpousesIDs(Hashtable<String, Family> family)
 	{
-		ArrayList<String> spouses = new ArrayList<String>();
-		
+		ArrayList<String> indSpouses = new ArrayList<String>();		
 		Iterator<String> i = getFamS().iterator();
 		while(i.hasNext())
 		{
@@ -118,22 +117,20 @@ public class Individual
 				String s = i.next();
 				if ( family.containsKey(s) )
 				{
-					spouses.add(family.get(s).getHusb());
+					indSpouses.add(family.get(s).getHusb());
 				}
-			}
-				
+			}				
 			else if(gender.equals("M"))
 			{
 				String s = i.next();
 				if ( family.containsKey(s) )
 				{
-					spouses.add(family.get(s).getWife());
+					indSpouses.add(family.get(s).getWife());
 				}
 			}
 		}
 		
-		return spouses;
-	}
-	
+		return indSpouses;
+	}	
 	
 }

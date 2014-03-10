@@ -47,11 +47,11 @@ public class ErrorFinder
 		return false;
 	}
 	
-	public static boolean checkIncest(Hashtable<String, Family> familyIndex, Hashtable<String, Individual> indIndex, Individual ind)
+	public static boolean checkIncest(Hashtable<String, Family> famIndex, Hashtable<String, Individual> indIndex, Individual ind)
 	{
-		ArrayList<String> spouses = ind.getAllSpousesIDs(familyIndex);
+		ArrayList<String> indSpouses = ind.getAllSpousesIDs(famIndex);
 		ArrayList<String> allRelations = new ArrayList<String>();
-		for(String spouseID: spouses)
+		for(String spouseID: indSpouses)
 		{
 			allRelations.addAll(indIndex.get(spouseID).getFamC());
 		}

@@ -29,61 +29,6 @@ public class Family
 		setLineNumber(LineNum);
 	}
 	
-	public void addChild(String cID)
-	{
-		children.add(cID);
-	}
-	
-	public Vector<String> getChildren()
-	{
-		return children;
-	}
-	
-	public void setHusb(String hID)
-	{
-		husband = hID;
-	}
-	
-	public void setWife(String wID)
-	{
-		wife = wID;
-	}
-	
-	public void setMarriage(GregorianCalendar m)
-	{
-		married = m;
-	}
-	
-	public void setDivorce(GregorianCalendar d)
-	{
-		divorced = d;
-	}
-	
-	public int getChildSize()
-	{
-		return children.size();
-	}
-	
-	public String getHusb()
-	{
-		return husband;
-	}
-	
-	public String getWife()
-	{
-		return wife;
-	}
-	
-	public GregorianCalendar getMD()
-	{
-		return married;
-	}
-	
-	public GregorianCalendar getDD()
-	{
-		return divorced;
-	}
-	
 	public String getID()
 	{
 		return famID;
@@ -97,6 +42,61 @@ public class Family
 	public void setLineNumber(int lineNum) 
 	{
 		this.lineNumber = lineNum;
+	}
+	
+	public void addChild(String cID)
+	{
+		children.add(cID);
+	}
+	
+	public Vector<String> getChildren()
+	{
+		return children;
+	}
+	
+	public void setMarriage(GregorianCalendar m)
+	{
+		married = m;
+	}
+	
+	public void setDivorce(GregorianCalendar d)
+	{
+		divorced = d;
+	}
+	
+	public void setHusb(String hID)
+	{
+		husband = hID;
+	}
+	
+	public void setWife(String wID)
+	{
+		wife = wID;
+	}
+		
+	public int getChildSize()
+	{
+		return children.size();
+	}
+	
+	public GregorianCalendar getMD()
+	{
+		return married;
+	}
+	
+	public GregorianCalendar getDD()
+	{
+		return divorced;
+	}
+	
+	public String getHusb()
+	{
+		return husband;
+	}
+	
+	public String getWife()
+	{
+		return wife;
 	}
 	
 }

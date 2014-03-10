@@ -7,7 +7,7 @@ public class ErrorMessage extends Error
 	
 	public String toString() 
 	{
-		String s = "Error\t";
+		String s = "Error\t Line  ";
 		s += Integer.toString( getLineNumber() );
 		s += "\t";
 		s += getMessage();

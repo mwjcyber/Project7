@@ -12,6 +12,24 @@ public class ErrorList
 		errors.add(p);
 	}
 	
+	private Vector<Error> errors;
+
+	public int size() 
+	{
+		return errors.size();
+	}
+	
+	public String buildStringOutput() 
+	{
+		String s = "";
+		
+		for (Error p : errors) 
+		{
+			s += p.toString();
+		}
+		return s;
+	}
+	
 	public Error get(int lineNumber) 
 	{
 		for (Error p : errors) {
@@ -21,24 +39,6 @@ public class ErrorList
 			}
 		}
 		return null;
-	}
-	
-	private Vector<Error> errors;
-
-	public int size() 
-	{
-		return errors.size();
-	}
-
-	public String buildOutputString() 
-	{
-		String s = "";
-		
-		for (Error p : errors) 
-		{
-			s += p.toString();
-		}
-		return s;
 	}
 	
 }

@@ -92,7 +92,7 @@ public class GedcomReader
 		} 
 		catch(FileNotFoundException e)
 		{
-			System.out.println("The file provided was invalid.");
+			System.out.println("File not found");
 		}
 	}
 	
@@ -104,17 +104,17 @@ public class GedcomReader
 		{
 			if ( ErrorFinder.checkDeathBeforeBirth(indIndex.get(s) )) 
 			{
-				el.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + "'s death occurs before birth."));
+				el.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Individual " + indIndex.get(s).getId() + "'s death occurs before birth."));
 			}
 			
 			if ( ErrorFinder.checkGender(famIndex, indIndex.get(s)))
 			{
-				el.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + "'s gender and spouse role don't match."));
+				el.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Individual " + indIndex.get(s).getId() + "'s gender and spouse role don't match."));
 			}
 				
 			if( ErrorFinder.checkIncest(famIndex, indIndex, indIndex.get(s)))
 			{
-				el.add(new ErrorMessage(indIndex.get(s).getLineNumber(), "Person " + indIndex.get(s).getId() + " married  a sibling."));
+				el.add(new ErrorMessage(indIndex.get(s).getLineNumber(), "Individual " + indIndex.get(s).getId() + " married  a sibling."));
 			}			
 		}
 		
