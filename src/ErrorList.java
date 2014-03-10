@@ -7,9 +7,9 @@ public class ErrorList
 		errors = new Vector<Error>();
 	}
 	
-	public void add(Error p) 
+	public void add(Error e) 
 	{
-		errors.add(p);
+		errors.add(e);
 	}
 	
 	private Vector<Error> errors;
@@ -23,19 +23,19 @@ public class ErrorList
 	{
 		String s = "";
 		
-		for (Error p : errors) 
+		for (Error e : errors) 
 		{
-			s += p.toString();
+			s += e.toString();
 		}
 		return s;
 	}
 	
 	public Error get(int lineNumber) 
 	{
-		for (Error p : errors) {
-			if ( p.getLineNumber() == lineNumber ) 
+		for (Error e : errors) {
+			if (e.getLineNumber() == lineNumber) 
 			{
-				return p;
+				return e;
 			}
 		}
 		return null;

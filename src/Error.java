@@ -3,7 +3,7 @@ public abstract class Error
 	private String message;
 	private int lineNumber;
 	
-	public Error(int lineNum, String msg) 
+	public Error(int lineNum, String msg)
 	{
 		this.lineNumber = lineNum;
 		this.message = msg;

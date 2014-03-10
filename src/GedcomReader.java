@@ -25,7 +25,7 @@ public class GedcomReader
 		listOfFams = new Vector<String>(50);
 	}
 	
-	public void readGED(File input)
+	public void readGedcom(File input)
 	{
 		String line;
 		Scanner file;
@@ -169,7 +169,7 @@ public class GedcomReader
 		return 1;
 	}
 	
-	public void addIndData(String entry, Individual cur)
+	public void addIndData(String entry, Individual ind)
 	{
 		String delim = "[ ]+";
 		String[] tokens = entry.split(delim);
@@ -182,11 +182,11 @@ public class GedcomReader
 		{
 			for(i = 2; i < tokens.length; i++)
 				name = name + tokens[i];
-			cur.setName(name);
+			ind.setName(name);
 		}
 		else if(tag.equalsIgnoreCase("SEX"))
 		{
-			cur.setGender(tokens[2]);
+			ind.setGender(tokens[2]);
 		}
 		else if(tag.equalsIgnoreCase("BIRT"))
 		{
@@ -198,11 +198,11 @@ public class GedcomReader
 		}
 		else if(tag.equalsIgnoreCase("FAMC"))
 		{
-			cur.addFamC(tokens[2]);
+			ind.addFamC(tokens[2]);
 		}
 		else if(tag.equalsIgnoreCase("FAMS"))
 		{
-			cur.addFamS(tokens[2]);
+			ind.addFamS(tokens[2]);
 		}
 		else if(tag.equalsIgnoreCase("DATE"))
 		{
@@ -213,18 +213,18 @@ public class GedcomReader
 				if(birthDate == true)
 				{
 					birthDate = false;
-					cur.setBirthDate(m);
+					ind.setBirthDate(m);
 				}
 				else if(deathDate == true)
 				{
 					deathDate = false;
-					cur.addDeathDate(m);
+					ind.addDeathDate(m);
 				}	
 			}
 		}
 	}
 	
-	public void addFamData(String entry, Family cur)
+	public void addFamData(String entry, Family ind)
 	{
 		String delim = "[ ]+";
 		String[] tokens = entry.split(delim);
@@ -233,15 +233,15 @@ public class GedcomReader
 		
 		if(tag.equalsIgnoreCase("HUSB"))
 		{
-			cur.setHusb(tokens[2]);
+			ind.setHusb(tokens[2]);
 		}
 		else if(tag.equalsIgnoreCase("WIFE"))
 		{
-			cur.setWife(tokens[2]);
+			ind.setWife(tokens[2]);
 		}
 		else if(tag.equalsIgnoreCase("CHIL"))
 		{
-			cur.addChild(tokens[2]);
+			ind.addChild(tokens[2]);
 		}
 		else if(tag.equalsIgnoreCase("MARR"))
 		{
@@ -260,12 +260,12 @@ public class GedcomReader
 				if(marrDate == true)
 				{
 					marrDate = false;
-					cur.setMarriage(m);
+					ind.setMarriage(m);
 				}
 				else if(divDate == true)
 				{
 					divDate = false;
-					cur.setDivorce(m);
+					ind.setDivorce(m);
 				}	
 			}
 		}

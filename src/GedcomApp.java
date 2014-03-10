@@ -6,6 +6,7 @@ public class GedcomApp
 {
     public static void main(String args[]) 
     {
+    	//Set GEDCOM filename here
     	String fileName = "GedcomTest.ged";
 	    try 
 	    {
@@ -17,7 +18,7 @@ public class GedcomApp
 	            System.out.println(s);
 	        }
 	        fr.close();
-	        System.out.println("End of '"+fileName+"' file. \n");
+	        System.out.println("--End of '"+fileName+"' file.-- \n");
 	    }        
 	    catch(Exception e) 
 	    {
@@ -30,7 +31,7 @@ public class GedcomApp
         else
         {
             GedcomReader parser = new GedcomReader();
-            parser.readGED(file);
+            parser.readGedcom(file);
             ErrorList el = parser.findErrors();
             
             if ( el.size() == 0 )

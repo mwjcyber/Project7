@@ -8,9 +8,9 @@ public class ErrorFinder
 	
 	public static boolean checkDeathBeforeBirth(Individual ind)
 	{
-		for ( GregorianCalendar g : ind.getDeathDate() ) 
+		for (GregorianCalendar g : ind.getDeathDate()) 
 		{
-			if ( ind.getBirthDate().after(g) ) 
+			if (ind.getBirthDate().after(g)) 
 			{
 				return true;
 			}
@@ -27,7 +27,7 @@ public class ErrorFinder
 			if(indGender.equals("F"))
 			{
 				String s = i.next();
-				if ( family.containsKey(s) )
+				if (family.containsKey(s))
 				{
 					family.get(s).getWife();
 				}
@@ -37,7 +37,7 @@ public class ErrorFinder
 			else if(indGender.equals("M"))
 			{
 				String s = i.next();
-				if ( family.containsKey(s) )
+				if (family.containsKey(s))
 				{
 					family.get(s).getHusb();
 				}
