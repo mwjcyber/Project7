@@ -7,16 +7,16 @@ public class ErrorList
 		errors = new Vector<Error>();
 	}
 	
-	public void add(Error e) 
-	{
-		errors.add(e);
-	}
-	
 	private Vector<Error> errors;
 
 	public int size() 
 	{
 		return errors.size();
+	}
+	
+	public void add(Error e) 
+	{
+		errors.add(e);
 	}
 	
 	public String buildStringOutput() 

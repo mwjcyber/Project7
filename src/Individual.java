@@ -9,7 +9,7 @@ public class Individual
 {
 	private String id;
 	private String name;
-	public String gender;
+	private String gender;
 	private GregorianCalendar birthDate;
 	private ArrayList<GregorianCalendar> deathDate;
 	private HashSet<String> famS;
