@@ -22,7 +22,10 @@ public class ErrorFinder
 	{
 //		if(ind.getGender().equals("F"))
 //		{
+<<<<<<< HEAD
 //			if (ind.getId() == famIndex.get(ind).getHusb());
+=======
+>>>>>>> 5f6b898e0ae9018bd5d192dbab484374fa4e0ed7
 //			if (ind.getId() == famIndex.get(ind).getWife());
 //			{
 //				return true;
@@ -30,7 +33,10 @@ public class ErrorFinder
 //		}			
 //		else if(ind.getGender().equals("M"))
 //		{
+<<<<<<< HEAD
 //			if (ind.getId() == famIndex.get(ind).getWife());
+=======
+>>>>>>> 5f6b898e0ae9018bd5d192dbab484374fa4e0ed7
 //			if (ind.getId() == famIndex.get(ind).getHusb());
 //			{
 //				return true;
