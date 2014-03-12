@@ -23,6 +23,7 @@ public class ErrorFinder
 //		if(ind.getGender().equals("F"))
 //		{
 //			if (ind.getId() == famIndex.get(ind).getHusb());
+//			if (ind.getId() == famIndex.get(ind).getWife());
 //			{
 //				return true;
 //			}			
@@ -30,6 +31,7 @@ public class ErrorFinder
 //		else if(ind.getGender().equals("M"))
 //		{
 //			if (ind.getId() == famIndex.get(ind).getWife());
+//			if (ind.getId() == famIndex.get(ind).getHusb());
 //			{
 //				return true;
 //			}
