@@ -19,10 +19,10 @@ public class GedcomReader
 	
 	public GedcomReader()
 	{
-		famIndex = new Hashtable<String, Family>(50);
+		famIndex = new Hashtable<String, Family>(100);
 		indIndex = new Hashtable<String, Individual>(200);
 		listOfInds = new Vector<String>(200);
-		listOfFams = new Vector<String>(50);
+		listOfFams = new Vector<String>(100);
 	}
 	
 	public void readGedcom(File input)
@@ -100,19 +100,19 @@ public class GedcomReader
 	{
 		ErrorList el = new ErrorList();
 		
-		for ( String s : indIndex.keySet() ) 
+		for (String s : indIndex.keySet()) 
 		{
-			if ( ErrorFinder.checkDeathBeforeBirth(indIndex.get(s) )) 
+			if (ErrorFinder.checkDeathBeforeBirth(indIndex.get(s))) 
 			{
-				el.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Individual " + indIndex.get(s).getId() + "'s death occurs before birth."));
+				el.add(new ErrorMessage( indIndex.get(s).getLineNumber(), "Individual " + indIndex.get(s).getId() + "'s death occurs before birth."));
 			}
 			
-			if ( ErrorFinder.checkGender(famIndex, indIndex.get(s)))
+			if (ErrorFinder.checkGender(famIndex, indIndex.get(s)))
 			{
-				el.add( new ErrorMessage( indIndex.get(s).getLineNumber(), "Individual " + indIndex.get(s).getId() + "'s gender and spouse role don't match."));
+				el.add(new ErrorMessage( indIndex.get(s).getLineNumber(), "Individual " + indIndex.get(s).getId() + "'s gender and spouse role don't match."));
 			}
 				
-			if( ErrorFinder.checkIncest(famIndex, indIndex, indIndex.get(s)))
+			if (ErrorFinder.checkIncest(famIndex, indIndex, indIndex.get(s)))
 			{
 				el.add(new ErrorMessage(indIndex.get(s).getLineNumber(), "Individual " + indIndex.get(s).getId() + " married  a sibling."));
 			}			
