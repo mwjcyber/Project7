@@ -21,8 +21,7 @@ public class ErrorList
 	
 	public String buildStringOutput() 
 	{
-		String s = "";
-		
+		String s = "";		
 		for (Error e : errors) 
 		{
 			s += e.toString();
@@ -32,7 +31,8 @@ public class ErrorList
 	
 	public Error get(int lineNumber) 
 	{
-		for (Error e : errors) {
+		for (Error e : errors) 
+		{
 			if (e.getLineNumber() == lineNumber) 
 			{
 				return e;

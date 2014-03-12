@@ -4,12 +4,12 @@ import java.util.GregorianCalendar;
 public class Family 
 {
 	private Vector<String> children;
+	private int lineNumber;
 	private String famID;
 	private String husband;
 	private String wife;
 	private GregorianCalendar divorced;
 	private GregorianCalendar married;
-	private int lineNumber;
 	
 	public Family(String id)
 	{
@@ -34,14 +34,14 @@ public class Family
 		return famID;
 	}
 	
-	public int getLineNumber() 
-	{
-		return lineNumber;
-	}
-	
 	public void setLineNumber(int lineNum) 
 	{
 		this.lineNumber = lineNum;
+	}
+	
+	public int getLineNumber() 
+	{
+		return lineNumber;
 	}
 	
 	public void addChild(String cID)
@@ -49,19 +49,14 @@ public class Family
 		children.add(cID);
 	}
 	
+	public int getChildSize()
+	{
+		return children.size();
+	}
+	
 	public Vector<String> getChildren()
 	{
 		return children;
-	}
-	
-	public void setMarriage(GregorianCalendar m)
-	{
-		married = m;
-	}
-	
-	public void setDivorce(GregorianCalendar d)
-	{
-		divorced = d;
 	}
 	
 	public void setHusb(String hID)
@@ -69,29 +64,14 @@ public class Family
 		husband = hID;
 	}
 	
-	public void setWife(String wID)
-	{
-		wife = wID;
-	}
-		
-	public int getChildSize()
-	{
-		return children.size();
-	}
-	
-	public GregorianCalendar getMD()
-	{
-		return married;
-	}
-	
-	public GregorianCalendar getDD()
-	{
-		return divorced;
-	}
-	
 	public String getHusb()
 	{
 		return husband;
+	}
+	
+	public void setWife(String wID)
+	{
+		wife = wID;
 	}
 	
 	public String getWife()
@@ -99,4 +79,24 @@ public class Family
 		return wife;
 	}
 	
+	public void setMarriage(GregorianCalendar m)
+	{
+		married = m;
+	}
+	
+	public GregorianCalendar getMD()
+	{
+		return married;
+	}
+	
+	public void setDivorce(GregorianCalendar d)
+	{
+		divorced = d;
+	}
+	
+	public GregorianCalendar getDD()
+	{
+		return divorced;
+	}
+		
 }

@@ -115,7 +115,7 @@ public class Individual
 			if(gender.equals("F"))
 			{
 				String s = i.next();
-				if ( family.containsKey(s) )
+				if (family.containsKey(s))
 				{
 					indSpouses.add(family.get(s).getHusb());
 				}
@@ -123,13 +123,12 @@ public class Individual
 			else if(gender.equals("M"))
 			{
 				String s = i.next();
-				if ( family.containsKey(s) )
+				if (family.containsKey(s))
 				{
 					indSpouses.add(family.get(s).getWife());
 				}
 			}
-		}
-		
+		}		
 		return indSpouses;
 	}	
 	

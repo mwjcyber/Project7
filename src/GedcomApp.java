@@ -34,10 +34,10 @@ public class GedcomApp
             parser.readGedcom(file);
             ErrorList el = parser.findErrors();
             
-            if ( el.size() == 0 )
+            if (el.size() == 0)
                 System.out.println("No Errors Found.");
             else
-                System.out.println( el.buildStringOutput() );
+                System.out.println(el.buildStringOutput());
         }     
     }
     
