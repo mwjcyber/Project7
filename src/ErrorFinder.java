@@ -8,9 +8,9 @@ public class ErrorFinder
 	
 	public static boolean checkDeathBeforeBirth(Individual ind)
 	{
-		for (GregorianCalendar g : ind.getDeathDate()) 
+		for (GregorianCalendar dd : ind.getDeathDate()) 
 		{
-			if (ind.getBirthDate().after(g)) 
+			if (ind.getBirthDate().after(dd)) 
 			{
 				return true;
 			}
