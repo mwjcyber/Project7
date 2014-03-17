@@ -1,7 +1,10 @@
+//SSW-555 Spring 2014 - Team 3
+
 import java.io.File;
 import java.io.FileReader;
 import java.io.BufferedReader;
 
+//Main file to execute gedcom file checker
 public class GedcomApp 
 {
     public static void main(String args[]) 

@@ -1,10 +1,12 @@
+//SSW-555 Spring 2014 - Team 3
+
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.HashSet;
 import java.util.Hashtable;
 import java.util.Iterator;
 
-
+//Class to generate individual data structure
 public class Individual 
 {
 	private String id;

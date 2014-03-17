@@ -1,3 +1,5 @@
+//SSW-555 Spring 2014 - Team 3
+
 import java.util.GregorianCalendar;
 import java.util.ArrayList;
 import java.util.Hashtable;
@@ -5,7 +7,7 @@ import java.util.Iterator;
 
 public class ErrorFinder 
 {
-	
+	//Method to verify person's death date doesn't proceed birth date
 	public static boolean checkDeathBeforeBirth(Individual ind)
 	{
 		for (GregorianCalendar dd : ind.getDeathDate()) 
@@ -18,6 +20,7 @@ public class ErrorFinder
 		return false;
 	}
 	
+	//Method to verify a person stated gender and marriage role match
 	public static boolean checkGender(Hashtable<String, Family> famIndex, Individual ind)
 	{
 //		if(ind.getGender().equals("F"))
@@ -40,6 +43,7 @@ public class ErrorFinder
 //		}
 	}
 	
+	//Method to identify is siblings are listed as married
 	public static boolean checkIncest(Hashtable<String, Family> famIndex, Hashtable<String, Individual> indIndex, Individual ind)
 	{
 		ArrayList<String> indSpouses = ind.getAllSpousesIDs(famIndex);

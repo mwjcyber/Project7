@@ -1,3 +1,5 @@
+//SSW-555 Spring 2014 - Team 3
+
 public abstract class Error 
 {
 	private String message;
@@ -8,8 +10,6 @@ public abstract class Error
 		this.lineNumber = lineNum;
 		this.message = msg;
 	}
-	
-	public abstract String toString();
 	
 	public int getLineNumber() 
 	{

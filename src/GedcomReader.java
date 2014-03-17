@@ -1,11 +1,14 @@
+//SSW-555 Spring 2014 - Team 3
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.Hashtable;
 import java.util.GregorianCalendar;
+import java.util.Hashtable;
 import java.lang.Integer;
+import java.util.Scanner;
 import java.util.Vector;
 
+//Class to read in gedcom data and create hashtables and vectors
 public class GedcomReader 
 {
 	private boolean birthDate = false;

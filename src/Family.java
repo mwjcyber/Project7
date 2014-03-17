@@ -1,6 +1,9 @@
+//SSW-555 Spring 2014 - Team 3
+
 import java.util.Vector;
 import java.util.GregorianCalendar;
 
+//Class to generate family data structure
 public class Family 
 {
 	private Vector<String> children;

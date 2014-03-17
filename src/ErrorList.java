@@ -1,5 +1,8 @@
+//SSW-555 Spring 2014 - Team 3
+
 import java.util.Vector;
 
+//List errors while iterating through data vector
 public class ErrorList 
 {
 	ErrorList() 
